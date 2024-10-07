@@ -9,6 +9,7 @@ def medico_valido():
     medico1 = Medico("crm", Funcionario)
     return medico1
 
+# Testando o crm
 def test_medico_alterar_crm_valido(medico_valido):
     medico_valido.crm = "crm2"
     assert medico_valido.crm == "crm2"

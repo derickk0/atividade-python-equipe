@@ -59,7 +59,7 @@ def test_endereco_cep_vazio_retorna_mensagem_erro():
     with pytest.raises(ValueError, match="O cep não deve estar vazio."):
         Endereco("Rua A.", "44", "N/A", "", "Salvador")
 
-# Testar CIDADE
+# Testar cidade
 def test_endereco_alterar_cidade_valido(endereco_valido):
     endereco_valido.cidade = "Bar"
     assert endereco_valido.cidade == "Bar"

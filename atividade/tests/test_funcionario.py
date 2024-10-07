@@ -7,7 +7,7 @@ def funcionario_valido():
     funcionario1 = Funcionario("Neymar", "telefone1","email1",Endereco("logradouro", "numero", "complemento", "cep", "cidade"))
     return funcionario1
 
-# Testar nome
+# Testando o nome
 def test_funcionario_alterar_nome_valido(funcionario_valido):
     funcionario_valido.nome = "Messi"
     assert funcionario_valido.nome == "Messi"
@@ -20,7 +20,7 @@ def test_funcionario_nome_vazio_retorna_mensagem_erro():
     with pytest.raises(ValueError, match="O nome não deve estar vazio."):
         Funcionario("", "telefone", "email", Endereco("logradouy", "numero", "com", "cep", "cidade"))
 
-# Testar telefone
+# Testando o telefone
 def test_funcionario_alterar_telefone_valido(funcionario_valido):
     funcionario_valido.telefone = "555"
     assert funcionario_valido.telefone == "555"
@@ -33,7 +33,7 @@ def test_funcionario_telefone_vazio_retorna_mensagem_erro():
     with pytest.raises(ValueError, match="O telefone não deve estar vazio."):
         Funcionario("Neymar", "", "email", Endereco("logradouy", "numero", "com", "cep", "cidade"))
 
-# Testar email
+# Testando o email
 def test_funcionario_alterar_email_valido(funcionario_valido):
     funcionario_valido.email = "ff@gmail"
     assert funcionario_valido.email == "ff@gmail"

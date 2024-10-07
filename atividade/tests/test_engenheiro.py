@@ -1,5 +1,4 @@
 import pytest 
-
 from atividade.models.engenheiro import Engenheiro
 from atividade.models.funcionario import Funcionario 
 from atividade.models.endereco import Endereco
@@ -9,6 +8,7 @@ def criar_engenheiro():
     engenheiro1 = Engenheiro("crea", Funcionario)
     return engenheiro1
 
+# Testando o crea
 def test_engenheiro_alterar_crea_valido(criar_engenheiro):
     criar_engenheiro.crea = "crea2"
     assert criar_engenheiro.crea == "crea2"

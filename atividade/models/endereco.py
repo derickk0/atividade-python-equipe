@@ -6,7 +6,7 @@ class Endereco:
         self.cep = self._verificar_cep(cep)
         self.cidade = self._verificar_cidade(cidade)
 
- # Testar nome
+    # Testar nome
     def _verificar_logradouro(self, valor):
         self._verificar_logradouro_tipo_invalido(valor)
         self._verificar_logradouro_vazio_invalido(valor)
@@ -85,17 +85,4 @@ class Endereco:
     def _verificar_cidade_vazio_invalido(self, valor5):
         if not valor5.strip():
             raise ValueError("A cidade não deve estar vazio.")
-    
-    
-
-
-    def __str__(self) -> str:
-        return (
-                f"Logradouro: {self.logradouro}"
-                f"Logradouro: {self. numero}"
-                f"Logradouro: {self.complemento}"
-                f"Logradouro: {self.cep}"
-                f"Logradouro: {self.cidade}"
-            
-        )
         

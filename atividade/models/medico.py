@@ -5,6 +5,7 @@ class Medico:
         self.crm = self._verificar_crm(crm)
         self.funcionario = funcionario
     
+    # Testar crm
     def _verificar_crm(self, valor):
         self._verificar_crm_tipo_invalido(valor)
         self._verificar_crm_vazio_invalido(valor)
