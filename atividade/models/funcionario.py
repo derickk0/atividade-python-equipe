@@ -1,10 +1,11 @@
 from atividade.models.endereco import Endereco
 
 class Funcionario:
-    def __init__(self, nome: str, telefone:str, email:str, endereco: Endereco) -> None:
+    def __init__(self, nome: str, telefone:str, email:str, endereco: Endereco, salarioFinal: int) -> None:
         self.nome = self._verificar_nome(nome)
         self.telefone = self._verificar_telefone(telefone)
         self.email = self._verificar_email(email)
+        self.salarioFinal = self._verificar_salarioFinal(salarioFinal)
         self.endereco = endereco
     
     # Testar nome
@@ -54,3 +55,19 @@ class Funcionario:
     def _verificar_email_vazio_invalido(self, valor3):
         if not valor3.strip():
             raise ValueError("O E-Mail não deve estar vazio.")
+    
+    # Testar salario final
+    def _verificar_salarioFinal(self, valor4):
+        self._verificar_salarioFinal_tipo_invalido(valor4)
+        self._verificar_salarioFinal_negativo_invalido(valor4)
+
+        self.salarioFinal = valor4
+        return self.salarioFinal
+    
+    def _verificar_salarioFinal_tipo_invalido(self, valor4):
+        if not isinstance(valor4, int):
+            raise TypeError("O salário deve ser um número.")
+        
+    def _verificar_salarioFinal_negativo_invalido(self, valor4):
+        if valor4 < 0:
+            raise ValueError("O salário deve ser um número positivo.")
